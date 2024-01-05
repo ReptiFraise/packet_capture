@@ -1,0 +1,14 @@
+[routers]
+#IP addresses of routers
+# Example :
+# Router = "192.168.1.1"
+Freyming = "10.57.2.254"
+Puget = "10.2.96.1"
+Rennes = "10.35.1.254"
+Reichshoffen = "10.67.1.254"
+Saintavold = "10.57.3.254"
+Marseille = "10.13.1.254"
+Vizille = "192.9.200.254"
+Auray = "10.56.1.254"
+Fameck = "192.168.2.254"
+Belley = "10.1.1.254"

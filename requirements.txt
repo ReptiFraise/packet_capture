@@ -1,0 +1,5 @@
+markdown
+nextcloud_client
+pyfiglet
+toml
+scp

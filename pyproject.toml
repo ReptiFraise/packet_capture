@@ -1,0 +1,22 @@
+[build-system]
+requires = ["flit_core>=3.4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "packet_capture"
+version = "0.0.1"
+authors = [
+  { name="Alban Calvo", email="alban@vizyon.ai" },
+]
+description = "package to execute tcpdump on remote"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["pyfiglet", "toml", "python-gnupg", "paramiko", "scp", "click"]
+
+[project.scripts]
+packet-capture = "packet_capture.__main__:main"

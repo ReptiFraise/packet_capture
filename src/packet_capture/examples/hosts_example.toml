@@ -1,0 +1,5 @@
+[routers]
+#IP addresses of routers
+# Example :
+# Router = "192.168.1.1"
+Router = "192.168.1.1"
