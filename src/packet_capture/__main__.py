@@ -61,7 +61,10 @@ def parse_json_data(json_string):
               help='The path to .gnupg folder to decrypt .json.gpg file')
 @click.option('--output', 
               default=None, 
-              help='/path/to/folder that will contain .pcap files') 
+              help='/path/to/folder that will contain .pcap files')
+@click.option('--timer', 
+              default=None, 
+              help='Timer of tcpdump command') 
 def main(hostip, 
          hostname, 
          port, 
@@ -70,7 +73,8 @@ def main(hostip,
          passwd, 
          passwds, 
          gnupg, 
-         output):
+         output,
+         timer):
     print_large_text("Packet Capture")
     print("tcpdump command will be executed, use --help for options")
     if hostip is not None and hosts is None:
@@ -79,7 +83,8 @@ def main(hostip,
                 password=passwd, 
                 username=user, 
                 port=port, 
-                output=output)
+                output=output,
+                timer=timer)
     elif hostip is None and hosts is not None:
         hosts_data = toml.load(hosts)['routers']
         file_path = passwds
@@ -96,7 +101,8 @@ def main(hostip,
                                         decrypted_data_dict[data],
                                         user,
                                         port,
-                                        output))
+                                        output,
+                                        timer))
             t1.start()
         for thread in threads:
             thread.join()

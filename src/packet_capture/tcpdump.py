@@ -15,7 +15,8 @@ def tcpdump(name,
             password,
             username,
             port,
-            output):
+            output,
+            timer):
     now = str(datetime.today()).replace(" ", "_").split(".")[0]
     try:
         # Create an SSH client instance
@@ -28,7 +29,6 @@ def tcpdump(name,
                            username=username,
                            password=password)
         print(f"ssh on {ip}:{port} successfully connected")
-        timer = 30
         interfaces = []
         command = 'netstat -i'
         stdin, stdout, stderr = ssh_client.exec_command(command)
